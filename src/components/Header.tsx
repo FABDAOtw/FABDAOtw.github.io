@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 export function Header() {
-  return <header className="w-full bg-white py-4 px-6 md:px-12">
+  return <header className="w-full bg-white py-4 px-4 md:px-5 lg:px-6">
       <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
@@ -19,7 +19,7 @@ export function Header() {
           </Link>
         </div>
         <nav className="flex items-center">
-          <ul className="flex flex-wrap space-x-6 text-[#1A3C40]">
+          <ul className="flex flex-wrap space-x-2 md:space-x-4 lg:space-x-6 text-[#1A3C40]">
             <li>
               <Link to="/" className="font-medium hover:text-teal-600">
                 Projects

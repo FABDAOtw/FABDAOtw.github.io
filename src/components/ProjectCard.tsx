@@ -11,15 +11,19 @@ interface Project {
 }
 interface ProjectCardProps {
   project: Project;
+  featured?: boolean;
 }
 export function ProjectCard({
-  project
+  project,
+  featured = false
 }: ProjectCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  // Apply different styles based on featured status
+  const cardClasses = featured ? 'bg-white rounded-2xl md:rounded-3xl lg:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[271px] lg:min-w-[654px] max-w-[1000px]' : 'bg-white rounded-2xl md:rounded-3xl lg:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[229px] md:min-w-[261px] lg:min-w-[384px] max-w-[410px] lg:max-w-[456px]';
   return <>
-      <article className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
+      <article className={cardClasses}>
         <div className="relative h-48 overflow-hidden">
           <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
           <div className="absolute top-4 left-4 bg-teal-500 h-10 w-10 rounded-full flex items-center justify-center">
@@ -28,7 +32,7 @@ export function ProjectCard({
             </svg>
           </div>
         </div>
-        <div className="p-4 cursor-pointer hover:bg-gray-50 transition-colors duration-200" onClick={openModal}>
+        <div className="p-4 px-4 md:px-5 lg:px-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200" onClick={openModal}>
           <div className="text-sm text-gray-600 mb-1">{project.org}</div>
           <h3 className="font-bold text-lg text-[#1A3C40] mb-2">
             {project.name}

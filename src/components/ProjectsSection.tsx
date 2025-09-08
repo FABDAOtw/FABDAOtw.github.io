@@ -86,10 +86,12 @@ export function ProjectsSection() {
     description: '',
     tags: ['FABDAO', 'ART']
   }];
-  return <section className="w-full px-6 md:px-12 mb-12">
+  return <section className="w-full px-4 md:px-5 lg:px-6 mb-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-[#1A3C40]">Projects</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A3C40]">
+            Projects
+          </h2>
           <div className="flex space-x-2">
             <button className="bg-[#1A3C40] text-white px-3 py-1 rounded text-sm">
               ALL
@@ -103,16 +105,18 @@ export function ProjectsSection() {
           </div>
         </div>
         <div className="mb-10">
-          <h3 className="text-2xl font-medium text-teal-600 mb-4">Featured</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredProjects.map(project => <ProjectCard key={project.id} project={project} />)}
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-600 mb-4">
+            Featured
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-8 md:-mx-9 lg:-mx-12">
+            {featuredProjects.map(project => <ProjectCard key={project.id} project={project} featured={true} />)}
           </div>
         </div>
         <div className="mb-10">
-          <h3 className="text-2xl font-medium text-teal-600 mb-4">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-600 mb-4">
             Other projects
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-8 md:-mx-5 lg:-mx-7">
             {otherProjects.map(project => <ProjectCard key={project.id} project={project} />)}
           </div>
         </div>
