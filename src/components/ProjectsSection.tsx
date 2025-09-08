@@ -89,7 +89,7 @@ export function ProjectsSection() {
   return <section className="w-full px-4 md:px-5 lg:px-6 mb-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1A3C40]">
+          <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium text-[#1A3C40]">
             Projects
           </h2>
           <div className="flex space-x-2">
@@ -108,7 +108,7 @@ export function ProjectsSection() {
           <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-600 mb-4">
             Featured
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-8 md:-mx-9 lg:-mx-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-8 md:-mx-9 lg:mx-0">
             {featuredProjects.map(project => <ProjectCard key={project.id} project={project} featured={true} />)}
           </div>
         </div>
@@ -116,7 +116,7 @@ export function ProjectsSection() {
           <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-600 mb-4">
             Other projects
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 lg:gap-8 md:-mx-5 lg:-mx-7">
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-2 md:gap-4 xl:gap-8 md:-mx-5 xl:-mx-7">
             {otherProjects.map(project => <ProjectCard key={project.id} project={project} />)}
           </div>
         </div>

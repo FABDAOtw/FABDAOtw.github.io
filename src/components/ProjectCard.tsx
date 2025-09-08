@@ -21,7 +21,7 @@ export function ProjectCard({
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   // Apply different styles based on featured status
-  const cardClasses = featured ? 'bg-white rounded-2xl md:rounded-3xl lg:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[271px] lg:min-w-[654px] max-w-[1000px]' : 'bg-white rounded-2xl md:rounded-3xl lg:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[229px] md:min-w-[261px] lg:min-w-[384px] max-w-[410px] lg:max-w-[456px]';
+  const cardClasses = featured ? 'bg-white rounded-2xl md:rounded-3xl xl:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[271px] xl:min-w-[654px] max-w-[1000px]' : 'bg-white rounded-2xl md:rounded-3xl xl:rounded-[40px] overflow-hidden shadow-sm border border-gray-100 min-w-[229px] md:min-w-[261px] xl:min-w-[384px] max-w-[410px] xl:max-w-[456px]';
   return <>
       <article className={cardClasses}>
         <div className="relative h-48 overflow-hidden">
