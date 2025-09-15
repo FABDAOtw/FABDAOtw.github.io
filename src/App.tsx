@@ -5,7 +5,7 @@ import { StatsSection } from './components/StatsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { Footer } from './components/Footer';
 export function App() {
-  return <div className="flex flex-col min-h-screen w-full bg-white">
+  return <div className="flex flex-col min-h-screen w-full bg-[#093532]">
       <Header />
       <main className="flex-1">
         <Hero />

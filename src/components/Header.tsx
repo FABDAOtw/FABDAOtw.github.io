@@ -1,39 +1,115 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 export function Header() {
-  return <header className="w-full bg-white py-4 px-4 md:px-5 lg:px-6">
-      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between">
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <img src="https://github.com/lilian79511/fearless-utils/blob/23e897c9926adf4cbacfe48bfba9c6a54a00938b/icons/tokens/white/AIR.svg" alt="GreenSofa Hypercerts Logo" className="h-10 w-auto mr-2" />
-          </Link>
+  const {
+    pathname
+  } = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null); // ⬅️ NEW
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 0);
+    onScroll();
+    window.addEventListener("scroll", onScroll, {
+      passive: true
+    });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // click outside to close the tablet/mobile menu
+  useEffect(() => {
+    const onDoc = (e: MouseEvent) => {
+      if (!menuRef.current) return;
+      const target = e.target as Node;
+
+      // ⬅️ Ignore clicks inside the menu OR on the toggle button
+      if (menuRef.current.contains(target)) return;
+      if (toggleRef.current && toggleRef.current.contains(target)) return;
+      setOpen(false);
+    };
+    if (open) document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [open]);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+  const tabClass = (path: string) => {
+    const isActive = pathname === path;
+    if (isActive) return "text-[#179080]";
+    return scrolled ? "text-[#1A3C40] hover:text-teal-600" : "text-[#F5F3EE] hover:text-[#179080]";
+  };
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${scrolled ? "bg-white" : "bg-transparent"}`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-6">
+        {/* Logo */}
+        <Link to="/" className="flex items-center justify-between">
+          <img src="https://github.com/lilian79511/fearless-utils/blob/23e897c9926adf4cbacfe48bfba9c6a54a00938b/icons/tokens/white/AIR.svg" alt="GreenSofa Hypercerts Logo" className="h-8 w-auto mr-2" />
+        </Link>
+
+        {/* Desktop tabs (lg+) */}
+        <nav className="hidden lg:block">
+          <ul className="flex space-x-6 text-base font-medium">
+            <li><Link to="/" className={tabClass("/")}>Projects</Link></li>
+            <li><Link to="/about" className={tabClass("/about")}>About</Link></li>
+            <li><span className={`opacity-50 ${scrolled ? "text-[#1A3C40]" : "text-[#6B8483]"}`}>Impact (Coming soon)</span></li>
+          </ul>
+        </nav>
+
+        <div className="flex items-center space-x-4">
+          {/* Language switch */}
+          <div className={`hidden lg:flex items-center space-x-2 ${scrolled ? "text-[#1A3C40]" : "text-[#F5F3EE]"}`}>
+            <button className="font-medium hover:text-[#179080]">EN</button>
+            <span>|</span>
+            <button className="font-medium hover:text-[#179080]">CH</button>
+          </div>
+
+          {/* Toggle button */}
+          <button ref={toggleRef} // ⬅️ NEW
+        onClick={() => setOpen(v => !v)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="nav-menu" className={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 ${scrolled ? "text-[#1A3C40]" : "text-[#F5F3EE]"}`}>
+            {open ?
+          // Close icon
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg> :
+          // Hamburger
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>}
+          </button>
         </div>
-        <nav className="flex items-center">
-          <ul className="flex flex-wrap space-x-2 md:space-x-4 lg:space-x-6 text-[#1A3C40]">
+      </div>
+
+      {/* Tablet/Mobile dropdown menu */}
+      <div ref={menuRef} id="nav-menu" className={`lg:hidden transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-64" : "max-h-0"}`}>
+        <div className="mx-4 md:mx-6 mb-3 rounded-xl border border-gray-200 bg-white shadow">
+          <ul className="py-2 text-base font-medium text-[#1A3C40]">
             <li>
-              <Link to="/" className="font-medium hover:text-teal-600">
+              <Link to="/" onClick={() => setOpen(false)} className={`block px-4 py-3 ${pathname === "/" ? "text-[#179080]" : "hover:text-teal-600"}`}>
                 Projects
               </Link>
             </li>
             <li>
-              <Link to="/about" className="font-medium hover:text-teal-600">
+              <Link to="/about" onClick={() => setOpen(false)} className={`block px-4 py-3 ${pathname === "/about" ? "text-[#179080]" : "hover:text-teal-600"}`}>
                 About
               </Link>
             </li>
-            <li>
-              <a href="#" className="font-medium hover:text-teal-600">
-                Impact (Coming soon)
-              </a>
-            </li>
-            <li className="ml-4">
-              <div className="flex space-x-2">
-                <button className="font-medium hover:text-teal-600">EN</button>
-                <span>|</span>
-                <button className="font-medium hover:text-teal-600">CH</button>
+            <li><span className="block px-4 py-3 text-[#1A3C40] opacity-50">Impact (Coming soon)</span></li>
+            <li className="block border-t border-gray-200 mt-1">
+              <div className="flex items-center px-4 py-3 space-x-2 text-[#1A3C40]">
+                <button className="font-medium hover:text-[#179080]">EN</button><span>|</span>
+                <button className="font-medium hover:text-[#179080]">CH</button>
               </div>
             </li>
           </ul>
-        </nav>
+        </div>
       </div>
     </header>;
 }

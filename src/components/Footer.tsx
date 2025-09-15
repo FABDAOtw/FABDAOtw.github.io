@@ -1,6 +1,6 @@
 import React from 'react';
 export function Footer() {
-  return <footer className="w-full bg-[#1A3C40] text-white py-8 px-6 md:px-12">
+  return <footer className="w-full bg-[#093532] text-white py-8 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
           <div className="flex items-center mb-4 md:mb-0">
