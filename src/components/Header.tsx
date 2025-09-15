@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "@/public/Logo_en.svg";
 export function Header() {
   const {
     pathname
@@ -41,14 +42,14 @@ export function Header() {
   }, [open]);
   const tabClass = (path: string) => {
     const isActive = pathname === path;
-    if (isActive) return "text-[#179080]";
-    return scrolled ? "text-[#1A3C40] hover:text-teal-600" : "text-[#F5F3EE] hover:text-[#179080]";
+    if (isActive) return "text-[#29C4A9]";
+    return scrolled ? "text-[#1A3C40] hover:text-teal-600" : "text-[#F5F3EE] text-opacity-70 hover:text-[#179080]";
   };
-  return <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-500 ${scrolled ? "bg-white" : "bg-transparent"}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in ${scrolled ? "bg-white rounded-b-3xl" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-6">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-between">
-          <img src="https://github.com/lilian79511/fearless-utils/blob/23e897c9926adf4cbacfe48bfba9c6a54a00938b/icons/tokens/white/AIR.svg" alt="GreenSofa Hypercerts Logo" className="h-8 w-auto mr-2" />
+          <img src="public/Logo_en.svg" alt="GreenSofa Hypercerts Logo" className="h-8 w-auto mr-2" />
         </Link>
 
         {/* Desktop tabs (lg+) */}
@@ -59,15 +60,13 @@ export function Header() {
             <li><span className={`opacity-50 ${scrolled ? "text-[#1A3C40]" : "text-[#6B8483]"}`}>Impact (Coming soon)</span></li>
           </ul>
         </nav>
-
-        <div className="flex items-center space-x-4">
           {/* Language switch */}
-          <div className={`hidden lg:flex items-center space-x-2 ${scrolled ? "text-[#1A3C40]" : "text-[#F5F3EE]"}`}>
+        <div className={`hidden items-center space-x-2 ${scrolled ? "text-[#1A3C40]" : "text-[#F5F3EE]"}`}>
             <button className="font-medium hover:text-[#179080]">EN</button>
             <span>|</span>
             <button className="font-medium hover:text-[#179080]">CH</button>
           </div>
-
+        <div className="flex lg:hidden items-center space-x-4">
           {/* Toggle button */}
           <button ref={toggleRef} // ⬅️ NEW
         onClick={() => setOpen(v => !v)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="nav-menu" className={`lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-500 ${scrolled ? "text-[#1A3C40]" : "text-[#F5F3EE]"}`}>
@@ -102,7 +101,7 @@ export function Header() {
               </Link>
             </li>
             <li><span className="block px-4 py-3 text-[#1A3C40] opacity-50">Impact (Coming soon)</span></li>
-            <li className="block border-t border-gray-200 mt-1">
+            <li className="hidden border-t border-gray-200 mt-1">
               <div className="flex items-center px-4 py-3 space-x-2 text-[#1A3C40]">
                 <button className="font-medium hover:text-[#179080]">EN</button><span>|</span>
                 <button className="font-medium hover:text-[#179080]">CH</button>

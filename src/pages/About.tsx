@@ -13,7 +13,7 @@ export function About() {
           </section>
           <section className="z-10 flex min-h-[50vh] items-center justify-center py-8 px-6 md:py-[120px] md:px-[80px] bg-[#0A2E2A]/90 bg-[url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center bg-no-repeat">
           {/* dark overlay */}
-          <div className="absolute inset-0 bg-[#0A2E2A] opacity-90"></div>
+          <div className="h-full w-full absolute md:inset-0 bg-[#0A2E2A] opacity-90"></div>
            {/* content */}
           <div className="relative max-w-7xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#29C4A9] mb-6 md:leading-[120%]">
@@ -22,9 +22,9 @@ export function About() {
           </div>
           </section>
           {/* Introduction Section */}
-          <section className="sticky top-0 md:h-screen z-20 flex items-top justify-center rounded-t-3xl py-8 px-6 md:py-[120px] md:px-[80px] bg-[#F5F3EE]">
+          <section className="md:sticky top-0 md:h-screen z-20 flex items-top justify-center rounded-t-3xl py-8 px-6 md:py-[120px] md:px-[80px] bg-[#F5F3EE]">
             <div className="max-w-7xl mx-auto">
-              <h3 className="text-[#0A8A79] text-xl mb-2 pb-3 md:pb-0">Introduction</h3>
+              <h3 className="text-[#0A8A79] text-xl font-medium mb-2 pb-3 md:pb-0">INTRODUCTION</h3>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#093532] mb-6 md:leading-[120%]">
                 Hypercerts Dashboard is a curation platform designed specifically
                 for public contributions in Taiwan.
@@ -39,22 +39,38 @@ export function About() {
             </div>
           </section>
           {/* Objective Section */}
-          <section className="sticky top-0 h-screen z-30 flex items-top justify-center rounded-t-3xl py-8 px-6 md:py-[120px] md:px-[80px] bg-[#0A2E2A]/90 bg-[url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center bg-no-repeat">
-          {/* dark overlay */}
-          <div className="absolute inset-0 bg-[#0A2E2A] opacity-90 rounded-t-3xl"></div>
-          {/* content */}
-          <div className="relative max-w-7xl mx-auto">
-            <h3 className="text-[#29C4A9] text-xl mb-2 pb-3 md:pb-0">Objective</h3>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#29C4A9] mb-6 md:leading-[120%]">
-              By using Hypercerts as the unit of impact, we curate public goods
-              contributions across different fields in Taiwan.
-            </h2>
-          </div>
+          <section className="
+              relative                       /* scope absolute overlay */
+              md:sticky top-0 md:h-screen
+              z-30 flex items-start justify-center
+              rounded-t-3xl overflow-hidden  /* clip overlay to rounded corners */
+              py-8 px-6 md:py-[120px] md:px-[80px]
+              bg-[url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80')]
+              bg-cover bg-center bg-no-repeat
+              -mb-6
+              /* remove bg-[#0A2E2A]/90 here to avoid double tint */
+            ">
+            {/* dark overlay — now anchored on all breakpoints */}
+            <div className="
+                pointer-events-none
+                absolute inset-0
+                bg-[#0A2E2A]/75 md:bg-[#0A2E2A]/90
+                /* no rounded here; parent clips via overflow-hidden */
+              " />
+
+            {/* content */}
+            <div className="relative z-10 max-w-7xl mx-auto">
+              <h3 className="text-white text-xl font-medium mb-2 pb-3 md:pb-0">OBJECTIVE</h3>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#29C4A9] mb-6 md:leading-[120%]">
+                By using Hypercerts as the unit of impact, we curate public goods
+                contributions across different fields in Taiwan.
+              </h2>
+            </div>
           </section>
 
 
           {/* Features Section */}
-          <section className="sticky top-0 h-screen z-40 flex items-top justify-center rounded-t-3xl py-8 px-6 md:py-[120px] md:px-[80px] bg-white">
+          <section className="md:sticky top-0 h-auto z-40 flex items-top justify-center rounded-t-3xl py-8 px-6 md:py-[120px] md:px-[80px] bg-white">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#093532] mb-6">Features</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
