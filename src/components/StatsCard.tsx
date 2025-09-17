@@ -64,8 +64,8 @@ export function StatsCard({
   }, [inView, value, displayValue]);
 
   // colour flips based on the parent’s scrolled state
-  const textColor = scrolled ? "text-[#093532]" : "text-[#F5F3EE]";
-  return <div ref={ref} className="rounded-lg p-6 transition-colors duration-500">
+  const textColor = scrolled ? "text-[#093532]" : "text-[#29C4A9]";
+  return <div ref={ref} className="rounded-lg py-4 md:p-6 transition-colors duration-500">
       <div className={`text-sm font-medium mb-1 ${textColor}`}>{label}</div>
       <div className={`text-3xl font-bold font-mono ${textColor}`}>
         {inView ? displayValue : value}

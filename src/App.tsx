@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { StatsSection } from './components/StatsSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { Footer } from './components/Footer';
 export function App() {
@@ -9,7 +8,6 @@ export function App() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <StatsSection />
         <ProjectsSection />
       </main>
       <Footer />

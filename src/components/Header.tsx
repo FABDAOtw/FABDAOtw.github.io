@@ -45,7 +45,7 @@ export function Header() {
     if (isActive) return "text-[#29C4A9]";
     return scrolled ? "text-[#1A3C40] hover:text-teal-600" : "text-[#F5F3EE] text-opacity-70 hover:text-[#179080]";
   };
-  return <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in ${scrolled ? "bg-white rounded-b-3xl" : "bg-transparent"}`}>
+  return <header className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ease-in backdrop-blur-sm rounded-b-3xl ${scrolled ? "bg-white/95" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-6">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-between">
