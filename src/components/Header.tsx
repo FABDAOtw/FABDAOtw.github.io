@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/public/Logo_en.svg";
+import logo from "../Logo_en.svg";
 export function Header() {
   const {
     pathname
@@ -49,7 +49,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 md:px-6">
         {/* Logo */}
         <Link to="/" className="flex items-center justify-between">
-          <img src="public/Logo_en.svg" alt="GreenSofa Hypercerts Logo" className="h-8 w-auto mr-2" />
+          <img src={logo} alt="GreenSofa Hypercerts Logo" className="h-8 w-auto mr-2" />
         </Link>
 
         {/* Desktop tabs (lg+) */}
