@@ -1,13 +1,6 @@
 import React from 'react';
-interface Project {
-  id: number;
-  name: string;
-  image: string;
-  org: string;
-  timeline: string;
-  description: string;
-  tags: string[];
-}
+import { Project } from '../data/projects';
+
 interface ProjectCardProps {
   project: Project;
 }

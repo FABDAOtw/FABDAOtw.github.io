@@ -11,9 +11,7 @@ export function ProjectDetail() {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // Simulate fetching project data
-    const projectId = parseInt(id || '0', 10);
-    const foundProject = projectsData.find(p => p.id === projectId);
+    const foundProject = projectsData.find(p => p.id === id);
     if (foundProject) {
       setProject(foundProject);
     }
