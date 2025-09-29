@@ -30,7 +30,7 @@ export function Footer() {
           </div>
         </div>
         <div className="pt-4 border-t border-white border-opacity-20 text-sm text-white text-opacity-70">
-          ©Green Sofa. All Rights Reserved.
+          ©GreenSofa. All Rights Reserved.
         </div>
       </div>
     </footer>;

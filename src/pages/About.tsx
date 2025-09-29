@@ -27,7 +27,7 @@ export function About() {
               <h3 className="text-[#0A8A79] text-xl font-medium mb-2 pb-3 md:pb-0">INTRODUCTION</h3>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#093532] mb-6 md:leading-[120%]">
                 Hypercerts Dashboard is a curation platform designed specifically
-                for public contributions in Taiwan.
+                for public goods contributions in Taiwan.
               </h2>
               <p className="text-lg md:text-2xl text-[#093532]">
                 Using Hypercert technology, we transform fragmented actions into
@@ -78,14 +78,14 @@ export function About() {
                   <p className="text-lg md:text-2xl text-[#0A2E2A]">
                     Allow users to deeply{' '}
                     <span className="text-[#0A8A79]">
-                      understand the actions, participants, and contribution value
+                      understand the actions, participants, and contribution values
                     </span>{' '}
                     behind each Hypercert.
                   </p>
                 </div>
                 <div className="bg-[#F7F7F7] p-8 rounded-[24px]">
                   <p className="text-lg md:text-2xl text-[#0A2E2A]">
-                    Through the Hypercert Dashboard, the international community
+                    Through the Hypercerts Dashboard, the international community
                     will have a central place to{' '}
                     <span className="text-[#0A8A79]">
                       see Taiwan's development and contributions in public goods.
