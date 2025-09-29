@@ -17,20 +17,20 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-medium mb-2">Contact</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-teal-200">
+              <a href="https://discord.com/invite/skvQAGPBDV" className="text-white hover:text-teal-200">
                 DISCORD
               </a>
-              <a href="#" className="text-white hover:text-teal-200">
+              <a href="https://x.com/GreenSofa_TW" className="text-white hover:text-teal-200">
                 X / Twitter
               </a>
-              <a href="#" className="text-white hover:text-teal-200">
+              <a href="https://hackmd.io/@greensofa/home" className="text-white hover:text-teal-200">
                 HACKMD
               </a>
             </div>
           </div>
         </div>
         <div className="pt-4 border-t border-white border-opacity-20 text-sm text-white text-opacity-70">
-          ©FAB DAO. All Rights Reserved.
+          ©Green Sofa. All Rights Reserved.
         </div>
       </div>
     </footer>;
