@@ -1,6 +1,8 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import AboutCover from '../About-page-cover-image.webp';
+
 export function About() {
   return <div className="flex flex-col justify-center items-center min-h-screen w-full bg-[#F5F3EE]">
       <Header />
@@ -11,9 +13,7 @@ export function About() {
           <section className="flex-1">
             {/* Content */}
           </section>
-          <section className="z-10 flex min-h-[50vh] items-center justify-center py-8 px-6 md:py-[120px] md:px-[80px] bg-[#0A2E2A]/90 bg-[url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center bg-no-repeat">
-          {/* dark overlay */}
-          <div className="h-full w-full absolute md:inset-0 bg-[#0A2E2A] opacity-90"></div>
+          <section className="z-10 flex min-h-[50vh] items-center justify-center py-8 px-6 md:py-[120px] md:px-[80px] bg-[#0A2E2A]/90 bg-cover bg-center bg-no-repeat" style={{backgroundImage: `url(${AboutCover})`}}>
            {/* content */}
           <div className="relative max-w-7xl mx-auto">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-[#29C4A9] mb-6 md:leading-[120%]">

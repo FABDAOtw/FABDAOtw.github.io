@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatsCard } from './StatsCard';
+import HeroCover from '../Hero-page-cover-image.webp';
+
 interface HeroProps {
   /** Leave in case you still want to control vertical feel */
   statsHeight?: number;
@@ -36,14 +38,13 @@ export function Hero({
         flex flex-col items-center justify-center
         px-6 pt-[192px] pb-[120px] md:px-[80px]
         bg-cover bg-center bg-no-repeat
-        bg-[url('https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80')]
       "
   /* If you want the hero to roughly fill the viewport, keep this.
      If not needed, remove the style line entirely. */ style={{
+    backgroundImage: `url(${HeroCover})`,
     minHeight: `calc(100vh - 56px)`
   }}>
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#0A2E2A]/90" />
+      {/* Dark overlay removed */}
 
       {/* Content sits above overlay */}
       <div className="relative z-10 w-full max-w-7xl">
