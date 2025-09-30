@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon } from 'lucide-react';
-import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { projectsData, Project } from '../data/projects';
 export function ProjectDetail() {
+  const navigate = useNavigate();
   const {
     id
   } = useParams();
@@ -19,7 +19,6 @@ export function ProjectDetail() {
   }, [id]);
   if (loading) {
     return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
-        <Header />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-2xl text-[#1A3C40]">Loading...</div>
         </main>
@@ -28,27 +27,25 @@ export function ProjectDetail() {
   }
   if (!project) {
     return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
-        <Header />
         <main className="flex-1 flex flex-col items-center justify-center">
           <div className="text-2xl text-[#1A3C40] mb-4">Project not found</div>
-          <Link to="/" className="px-4 py-2 bg-[#1A3C40] text-white rounded-md hover:bg-[#113A36]">
+          <button onClick={() => navigate(-1)} className="px-4 py-2 bg-[#1A3C40] text-white rounded-md hover:bg-[#113A36]">
             Back to Projects
-          </Link>
+          </button>
         </main>
         <Footer />
       </div>;
   }
   return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
-      <Header />
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
           {/* Back button */}
-          <Link to="/" className="inline-flex items-center text-teal-700 hover:underline mb-6">
+          <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-700 hover:underline mb-6">
             <svg className="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Projects
-          </Link>
+          </button>
           {/* Grid: Left card (image attached at top) + Right sidebar */}
           <div className="h-auto max-w-7xl mx-auto pb-16">
             {/* Grid: Left (content) + Right (sidebar) */}
