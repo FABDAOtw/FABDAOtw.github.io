@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon } from 'lucide-react';
 import { Footer } from '../components/Footer';
 import { projectsData, Project } from '../data/projects';
 export function ProjectDetail() {
   const navigate = useNavigate();
+  const location = useLocation();
   const {
     id
   } = useParams();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const handleBack = () => {
+    if (location.key !== 'default') {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
+
   useEffect(() => {
     const foundProject = projectsData.find(p => p.id === id);
     if (foundProject) {
@@ -29,7 +39,7 @@ export function ProjectDetail() {
     return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
         <main className="flex-1 flex flex-col items-center justify-center">
           <div className="text-2xl text-[#1A3C40] mb-4">Project not found</div>
-          <button onClick={() => navigate(-1)} className="px-4 py-2 bg-[#1A3C40] text-white rounded-md hover:bg-[#113A36]">
+          <button onClick={handleBack} className="px-4 py-2 bg-[#1A3C40] text-white rounded-md hover:bg-[#113A36]">
             Back to Projects
           </button>
         </main>
@@ -40,7 +50,7 @@ export function ProjectDetail() {
       <main className="flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
           {/* Back button */}
-          <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-700 hover:underline mb-6">
+          <button onClick={handleBack} className="inline-flex items-center text-teal-700 hover:underline mb-6">
             <svg className="w-5 h-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
