@@ -66,20 +66,6 @@ export function ProjectDetail() {
                         {project.timeline}
                       </span>
                     </div>
-                    <span className="hidden sm:inline-block text-gray-300">
-                      |
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
-                        <GlobeIcon size={18} className="text-gray-700" />
-                      </button>
-                      <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
-                        <TwitterIcon size={18} className="text-gray-700" />
-                      </button>
-                      <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-100">
-                        <FacebookIcon size={18} className="text-gray-700" />
-                      </button>
-                    </div>
                   </div>
 
                   <div className="mt-6 space-y-4 text-[#113A36] leading-relaxed">
@@ -98,28 +84,6 @@ export function ProjectDetail() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                       </a>
-                    </span>
-
-                    {/* separator */}
-                    <span className="text-gray-300 flex-none">•</span>
-
-                    {/* Verified by */}
-                    <span className="inline-flex items-center whitespace-nowrap text-gray-600">
-                      <span className="mr-1">Verified by</span>
-                      <span className="font-semibold text-gray-900">
-                        0x2914...29D2rg
-                      </span>
-                    </span>
-
-                    {/* separator */}
-                    <span className="text-gray-300 flex-none">•</span>
-
-                    {/* Verified on */}
-                    <span className="inline-flex items-center whitespace-nowrap text-gray-600">
-                      <span className="mr-1">Verified on</span>
-                      <span className="font-semibold text-gray-900">
-                        May 01, 2025
-                      </span>
                     </span>
                   </div>
 
