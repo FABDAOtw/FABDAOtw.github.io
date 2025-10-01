@@ -24,8 +24,8 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="pt-4 border-t border-white border-opacity-20 text-sm text-white text-opacity-70 flex items-center justify-between">
-          <div className="flex items-center">
+        <div className="pt-4 border-t border-white border-opacity-20 text-sm text-white text-opacity-70 flex flex-col md:flex-row items-start md:items-center justify-between">
+          <div className="flex items-center mb-4 md:mb-0">
             <span className="mr-2">Powered by</span>
             <img src={FabDaoLogo} alt="FAB DAO" />
           </div>
