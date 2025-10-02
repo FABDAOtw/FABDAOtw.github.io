@@ -118,11 +118,11 @@ export function ProjectDetail() {
               <aside className="mt-8 md:mt-0 space-y-4">
                 <div className="bg-white rounded-xl p-4 flex items-center gap-3">
                   <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
-                    GS
+                    {project.minter.avatar}
                   </div>
                   <div className="min-w-0">
                     <div className="text-gray-900 font-medium truncate">
-                      Greensofa
+                      {project.minter.name}
                     </div>
                   </div>
                 </div>
