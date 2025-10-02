@@ -124,29 +124,23 @@ export function ProjectDetail() {
                     <div className="text-gray-900 font-medium truncate">
                       Greensofa
                     </div>
-                    <a href="#" className="text-teal-700 text-sm hover:underline">
-                      View all projects
-                    </a>
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4">
                   <h3 className="text-lg font-semibold text-gray-900">
                     Contributors ({project.contributors.length})
                   </h3>
-                  <div className="mt-3 max-h-60 overflow-y-auto pr-1 space-y-2">
+                  <div className="mt-3 space-y-2">
                     {project.contributors.map((c, i) => <div key={i} className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
                           {c.avatar}
                         </div>
 
-                        <span className="text-sm text-gray-800">
-                          {c.name}
-                        </span>
-                        <button className="ml-auto p-1 rounded hover:bg-gray-100">
-                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                          </svg>
-                        </button>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm text-gray-800">
+                            {c.name}
+                          </span>
+                        </div>
                       </div>)}
                   </div>
                 </div>
@@ -159,14 +153,11 @@ export function ProjectDetail() {
                         <span className="text-sm text-gray-500 w-4">
                           {idx + 1}
                         </span>
-                        <span className="text-sm text-gray-900">
-                          {o.name}
-                        </span>
-                        <button className="ml-auto p-1 rounded hover:bg-gray-100">
-                          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                          </svg>
-                        </button>
+                        <div className="flex-1 min-w-0">
+                          <span className="text-sm text-gray-900 break-all">
+                            {o.name}
+                          </span>
+                        </div>
                         <span className="text-sm font-medium text-gray-900">
                           {o.percentage}
                         </span>
