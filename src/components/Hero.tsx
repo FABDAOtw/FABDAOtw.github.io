@@ -21,17 +21,14 @@ export function Hero({
     return () => window.removeEventListener('scroll', onScroll as any);
   }, []);
   const stats = [{
-    label: 'PROJECTS',
-    value: '56'
-  }, {
-    label: 'HYPERCERTS',
-    value: '24'
+    label: 'PROJECTS with HYPERCERTS',
+    value: '13+'
   }, {
     label: 'PARTICIPANTS',
-    value: '1,032'
+    value: '53,000+'
   }, {
-    label: 'FUNDING (USD)',
-    value: '$4,200,000'
+    label: 'FUNDING',
+    value: '5,500+ USD'
   }];
   return <section className="
         md:sticky top-0 z-10 relative
@@ -62,8 +59,8 @@ export function Hero({
         {/* Stats directly under the title */}
         <div className="mt-6 md:mt-10">
           {/* Optional: a subtle panel behind stats; remove if you want them floating */}
-          <div className="rounded-2xl p-4 md:p-6 .max-w-4xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-2 lg:gap-4">
+          <div className="rounded-2xl p-4 md:p-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {stats.map((stat, i) => <StatsCard key={i} label={stat.label} value={stat.value} />)}
             </div>
           </div>
