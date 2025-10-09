@@ -87,9 +87,9 @@ export function ProjectDetail() {
                   <div className="my-6 h-px bg-gray-200" />
 
                   <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
-                    {/* View on + Explore */}
+                    {/* Minted on + Explore */}
                     <span className="inline-flex items-center whitespace-nowrap text-gray-600">
-                      <span className="mr-2">View on</span>
+                      <span className="mr-2">Minted on</span>
                       <a href={project.exploreLink} className="text-teal-700 font-semibold inline-flex items-center hover:underline whitespace-nowrap">
                         Explore
                         <svg className="w-4 h-4 ml-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +100,7 @@ export function ProjectDetail() {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tags.map((tag, index) => <span key={index} className="
+                    {project.work_scope.map((work_scope, index) => <span key={index} className="
                           text-xs px-2 py-1 rounded border
                           bg-gray-100 text-gray-800 border-gray-200
                           transition-colors
@@ -108,7 +108,7 @@ export function ProjectDetail() {
                           group-hover:text-white
                           group-hover:border-white/40
                         ">
-                        {tag}
+                        {work_scope}
                       </span>)}
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export function ProjectDetail() {
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          <span className="text-sm text-gray-800">
+                          <span className="text-sm text-gray-800 break-all">
                             {c.name}
                           </span>
                         </div>

@@ -45,7 +45,7 @@ export function FeaturedProjectCard({
             {project.description}
           </p>}
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, index) => <span key={index} className="
+          {project.work_scope.map((work_scope, index) => <span key={index} className="
                 text-xs px-2 py-1 rounded border
                 bg-gray-100 text-gray-800 border-gray-200
                 transition-colors
@@ -53,7 +53,7 @@ export function FeaturedProjectCard({
                 group-hover:text-white
                 group-hover:border-white/40
               ">
-              {tag}
+              {work_scope}
             </span>)}
         </div>
       </div>
