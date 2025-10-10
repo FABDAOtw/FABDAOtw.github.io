@@ -61,7 +61,7 @@ export function ProjectDetail() {
             {/* Grid: Left (content) + Right (sidebar) */}
             <div className="md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
               {/* LEFT COLUMN CARD */}
-              <div className="md:col-span-2 rounded-3xl overflow-hidden">
+              <div className="md:col-span-2 rounded-3xl overflow-hidden bg-white shadow-sm">
                 <div className="relative">
                   <img src={project.image} alt={project.name} className="w-full h-[180px] md:h-60 lg:h-[420px] object-cover object-top scale-[1.01] " />
                 </div>
