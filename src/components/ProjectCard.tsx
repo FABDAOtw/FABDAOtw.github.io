@@ -8,10 +8,10 @@ export function ProjectCard({
   project
 }: ProjectCardProps) {
   return <div className="group relative isolate overflow-hidden rounded-2xl md:rounded-3xl xl:rounded-[40px] 
-                shadow-sm transition-all duration-300 cursor-pointer
-                min-w-[229px] xl:max-w-[456px]">
+                border border-gray-100 shadow-sm transition-all duration-300 cursor-pointer
+                bg-white min-w-[229px] xl:max-w-[456px]">
       {/* Image: give a teal backdrop so luminosity blend has something to mix with */}
-      <div className="relative h-40 md:h-28 lg:h-48 overflow-hidden scale-[1.01]">
+      <div className="relative h-40 md:h-28 lg:h-48 overflow-hidden bg-[#0A2E2A] scale-[1.01]">
         <img src={project.image} alt={project.name} className="
             w-full h-full object-cover object-top
             transition-all duration-500 ease-out
