@@ -117,11 +117,11 @@ export function ProjectDetail() {
               {/* RIGHT SIDEBAR */}
               <aside className="mt-8 md:mt-0 space-y-4">
                 <div className="bg-white rounded-xl p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
                     {project.minter.avatar}
                   </div>
                   <div className="min-w-0">
-                    <div className="text-gray-900 font-medium truncate">
+                    <div className="text-gray-900 font-medium break-all">
                       {project.minter.name}
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export function ProjectDetail() {
                   </h3>
                   <div className="mt-3 space-y-2">
                     {project.contributors.map((c, i) => <div key={i} className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold">
+                        <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
                           {c.avatar}
                         </div>
 
