@@ -4,6 +4,7 @@ import { ProjectCard } from './ProjectCard';
 import { FeaturedProjectCard } from './FeaturedProjectCard';
 import { Pagination } from './Pagination';
 import { projectsData } from '../data/projects';
+import { linkProjectsData } from '../data/linkprojects';
 
 export function ProjectsSection() {
   const [activePage, setActivePage] = useState(1);
@@ -45,6 +46,16 @@ export function ProjectsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-4 xl:gap-8">
             {otherProjects.map(project => <Link key={project.id} to={`/project/${project.id}`} className="block">
                 <ProjectCard project={project} />
+              </Link>)}
+          </div>
+        </div>
+        <div className="mb-10">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-medium text-teal-600 mb-4">
+            Link projects
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-4 xl:gap-8">
+            {linkProjectsData.map(project => <Link key={project.id} to={`/linkproject/${project.id}`} className="block">
+                <ProjectCard project={project as any} />
               </Link>)}
           </div>
         </div>
