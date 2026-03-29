@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { ProjectCard } from './ProjectCard';
 import { FeaturedProjectCard } from './FeaturedProjectCard';
 import { Pagination } from './Pagination';
-import { useProjectsData } from '../data/projects';
-import { useLinkProjectsData } from '../data/linkprojects';
+import { useProjectsData, useLinkProjectsData } from '../data/DataProvider';
 
 export function ProjectsSection() {
   const [activePage, setActivePage] = useState(1);

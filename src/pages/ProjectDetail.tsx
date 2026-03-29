@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon } from 'lucide-react';
 import { Footer } from '../components/Footer';
-import { useProjectsData, Project } from '../data/projects';
+import { useProjectsData } from '../data/DataProvider';
+import { Project } from '../data/projects';
 export function ProjectDetail() {
   const navigate = useNavigate();
   const location = useLocation();

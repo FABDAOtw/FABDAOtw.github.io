@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon, ExternalLinkIcon } from 'lucide-react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { useLinkProjectsData } from '../data/linkprojects';
+import { useLinkProjectsData } from '../data/DataProvider';
 import { Project } from '../data/projects';
 
 export function LinkProjectDetail() {

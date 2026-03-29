@@ -5,15 +5,18 @@ import { About } from './pages/About';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LinkProjectDetail } from './pages/LinkProjectDetail';
 import ScrollToTop from './components/ScrollToTop';
+import { DataProvider } from './data/DataProvider';
 
 export function AppRouter() {
-  return <HashRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/project/:id" element={<ProjectDetail />} />
-        <Route path="/linkproject/:id" element={<LinkProjectDetail />} />
-      </Routes>
-    </HashRouter>;
+  return <DataProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/linkproject/:id" element={<LinkProjectDetail />} />
+        </Routes>
+      </HashRouter>
+    </DataProvider>;
 }
