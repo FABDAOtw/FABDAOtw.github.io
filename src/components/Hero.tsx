@@ -28,7 +28,7 @@ export function Hero({
     value: '53,000+'
   }, {
     label: 'FUNDING',
-    value: '5,500+ USD'
+    value: '10,000+ USD'
   }];
   return <section className="
         md:sticky top-0 z-10 relative
