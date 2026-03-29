@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon } from 'lucide-react';
 import { Footer } from '../components/Footer';
-import { projectsData, Project } from '../data/projects';
+import { useProjectsData, Project } from '../data/projects';
 export function ProjectDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const {
     id
   } = useParams();
+  const { projectsData, loading: dataLoading } = useProjectsData();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,12 +22,13 @@ export function ProjectDetail() {
   };
 
   useEffect(() => {
+    if (dataLoading) return;
     const foundProject = projectsData.find(p => p.id === id);
     if (foundProject) {
       setProject(foundProject);
     }
     setLoading(false);
-  }, [id]);
+  }, [id, projectsData, dataLoading]);
   if (loading) {
     return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
         <main className="flex-1 flex items-center justify-center">

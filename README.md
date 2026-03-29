@@ -18,4 +18,6 @@ The proposed Hypercerts Dashboard will become the core verification and visibili
 ## How to Build
 
 - Develop and run local server: `npm run dev`
+  - In this repository, create a new `.env` file with `VITE_DATA=$YOUR_DATA_URL_HOST`
 - Deploy: `npm run deploy`
+  - Using GitHub Pages for data hosting, [create a repository variable](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-variables#creating-configuration-variables-for-a-repository) `VITE_DATA` and value as `$YOUR_DATA_URL_HOST`

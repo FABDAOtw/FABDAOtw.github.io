@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { XIcon, GlobeIcon, TwitterIcon, FacebookIcon, ExternalLinkIcon } from 'lucide-react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { linkProjectsData } from '../data/linkprojects';
+import { useLinkProjectsData } from '../data/linkprojects';
 import { Project } from '../data/projects';
 
 export function LinkProjectDetail() {
@@ -12,6 +12,7 @@ export function LinkProjectDetail() {
   const {
     id
   } = useParams();
+  const { linkProjectsData, loading: dataLoading } = useLinkProjectsData();
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -23,12 +24,13 @@ export function LinkProjectDetail() {
     }
   };
   useEffect(() => {
+    if (dataLoading) return;
     const foundProject = linkProjectsData.find(p => p.id === id);
     if (foundProject) {
       setProject(foundProject);
     }
     setLoading(false);
-  }, [id]);
+  }, [id, linkProjectsData, dataLoading]);
   if (loading) {
     return <div className="flex flex-col min-h-screen w-full bg-[#F5F3EE]">
         <Header />

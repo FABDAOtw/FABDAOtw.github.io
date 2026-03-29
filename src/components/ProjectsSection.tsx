@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { ProjectCard } from './ProjectCard';
 import { FeaturedProjectCard } from './FeaturedProjectCard';
 import { Pagination } from './Pagination';
-import { projectsData } from '../data/projects';
-import { linkProjectsData } from '../data/linkprojects';
+import { useProjectsData } from '../data/projects';
+import { useLinkProjectsData } from '../data/linkprojects';
 
 export function ProjectsSection() {
   const [activePage, setActivePage] = useState(1);
+  const { projectsData, loading } = useProjectsData();
+  const { linkProjectsData, loading: linkLoading } = useLinkProjectsData();
   const featuredProjects = projectsData.slice(0, 2);
   const otherProjects = projectsData.slice(2);
 

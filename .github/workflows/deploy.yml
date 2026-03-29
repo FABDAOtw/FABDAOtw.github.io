@@ -1,0 +1,3 @@
+- run: npm run build
+  env:
+    VITE_DATA: ${{ vars.VITE_DATA }}
